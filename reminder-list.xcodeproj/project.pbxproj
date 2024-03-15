@@ -16,6 +16,7 @@
 		AAC848522BA4F5C7007E4686 /* reminder_listTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC848512BA4F5C7007E4686 /* reminder_listTests.swift */; };
 		AAC8485C2BA4F5C7007E4686 /* reminder_listUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8485B2BA4F5C7007E4686 /* reminder_listUITests.swift */; };
 		AAC8485E2BA4F5C7007E4686 /* reminder_listUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8485D2BA4F5C7007E4686 /* reminder_listUITestsLaunchTests.swift */; };
+		AAC8486C2BA4FAA5007E4686 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8486B2BA4FAA5007E4686 /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AAC848572BA4F5C7007E4686 /* reminder-listUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "reminder-listUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC8485B2BA4F5C7007E4686 /* reminder_listUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminder_listUITests.swift; sourceTree = "<group>"; };
 		AAC8485D2BA4F5C7007E4686 /* reminder_listUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminder_listUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AAC8486B2BA4FAA5007E4686 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		AAC848392BA4F5C5007E4686 /* reminder-list */ = {
 			isa = PBXGroup;
 			children = (
+				AAC8486A2BA4FA4B007E4686 /* Models */,
 				AAC8483A2BA4F5C5007E4686 /* AppDelegate.swift */,
 				AAC8483C2BA4F5C5007E4686 /* SceneDelegate.swift */,
 				AAC8483E2BA4F5C5007E4686 /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				AAC8485D2BA4F5C7007E4686 /* reminder_listUITestsLaunchTests.swift */,
 			);
 			path = "reminder-listUITests";
+			sourceTree = "<group>";
+		};
+		AAC8486A2BA4FA4B007E4686 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAC8486B2BA4FAA5007E4686 /* Reminder.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				AAC8483F2BA4F5C5007E4686 /* ViewController.swift in Sources */,
 				AAC8483B2BA4F5C5007E4686 /* AppDelegate.swift in Sources */,
 				AAC8483D2BA4F5C5007E4686 /* SceneDelegate.swift in Sources */,
+				AAC8486C2BA4FAA5007E4686 /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
