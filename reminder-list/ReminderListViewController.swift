@@ -6,6 +6,7 @@ class ReminderListViewController: UICollectionViewController {
    * UICollectionViewDiffableDataSource: Manage `UICollectionView` data.
    */
   typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
+  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
 
   /*
    * Warning!!
@@ -40,6 +41,26 @@ class ReminderListViewController: UICollectionViewController {
       (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
       return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
     }
+
+    var snapshot = Snapshot()
+    snapshot.appendSections([0])
+    var reminderTitles = [String]()
+    /*
+     *  for reminder in Reminder.sampleData {
+     *    reminderTitles.append(reminder.title)
+     *  }
+     * Shorten the code you added above.
+     */
+    snapshot.appendItems(Reminder.sampleData.map { $0.title })
+    /*
+     * Applying the snapshot reflects the changes in the user interface.
+     */
+    dataSource.apply(snapshot)
+
+    /*
+     * Assign the data source to the collection view.
+     */
+    collectionView.dataSource = dataSource
   }
 
   /*
