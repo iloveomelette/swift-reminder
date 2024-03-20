@@ -5,11 +5,11 @@ extension ReminderListViewController {
    * Type aliases are helpful for referring to an existing type with a name that’s more expressive.
    * UICollectionViewDiffableDataSource: Manage `UICollectionView` data.
    */
-  typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
-  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
+  typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
+  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
   
-  func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: String) {
-    let reminder = Reminder.sampleData[indexPath.item]
+  func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
+    let reminder = reminders[indexPath.item]
     var contentConfiguration = cell.defaultContentConfiguration() // This func creates a content configuration with the predefined system style.
     contentConfiguration.text = reminder.title
     contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText

@@ -11,6 +11,7 @@ class ReminderListViewController: UICollectionViewController {
    * to guarantee that the optional has a value.
    */
   var dataSource: DataSource!
+  var reminders: [Reminder] = Reminder.sampleData
 
   /*
    * After the view controller loads its view hierarchy into memory,
@@ -25,20 +26,23 @@ class ReminderListViewController: UICollectionViewController {
     let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
 
     dataSource = DataSource(collectionView: collectionView) {
-      (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
+      /*
+       * `Reminder.ID` is the associated type of the Identifiable protocol.
+       * It’s a type alias for String in the case of Reminder.
+       */
+      (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Reminder.ID) in
       return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
     }
 
     var snapshot = Snapshot()
     snapshot.appendSections([0])
-    var reminderTitles = [String]()
     /*
      *  for reminder in Reminder.sampleData {
      *    reminderTitles.append(reminder.title)
      *  }
      * Shorten the code you added above.
      */
-    snapshot.appendItems(Reminder.sampleData.map { $0.title })
+    snapshot.appendItems(reminders.map { $0.title })
     /*
      * Applying the snapshot reflects the changes in the user interface.
      */

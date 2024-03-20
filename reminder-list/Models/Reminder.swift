@@ -5,13 +5,17 @@ import Foundation
  *
  * 値型の一種。プロパティやメソッドを定義することによって
  * 様々なデータや振る舞いを形成できる。
+ *
+ * `: Identifiable` declare conformance to the Identifiable protocol.
+ * identifiable types must have an id property.
  */
-struct Reminder {
+struct Reminder: Identifiable {
   /*
    * Stored Properties
    *
    * The Swift compiler automatically provides each structure with a memberwise initializer.
    */
+  var id: String = UUID().uuidString
   var title: String
   var dueDate: Date
   var notes: String? = nil // Optional string property and assign default value.
