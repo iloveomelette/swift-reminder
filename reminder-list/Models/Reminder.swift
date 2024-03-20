@@ -22,6 +22,15 @@ struct Reminder: Identifiable {
   var isComplete: Bool = false
 }
 
+extension [Reminder] {
+  func indexOfReminder(withId id: Reminder.ID) -> Self.Index {
+    guard let index = firstIndex(where: { $0.id == id }) else {
+      fatalError()
+    }
+    return index
+  }
+}
+
 /*
  * The #if DEBUG flag is a compilation directive that prevents the enclosed code from compiling
  * when you build the app for release.
