@@ -2,13 +2,6 @@ import UIKit
 
 class ReminderListViewController: UICollectionViewController {
   /*
-   * Type aliases are helpful for referring to an existing type with a name that’s more expressive.
-   * UICollectionViewDiffableDataSource: Manage `UICollectionView` data.
-   */
-  typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
-  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
-
-  /*
    * Warning!!
    * Use implicitly unwrapped optionals only
    * **when you know that the optional will have a value.**
@@ -29,13 +22,7 @@ class ReminderListViewController: UICollectionViewController {
     let listLayout = listLayout()
     collectionView.collectionViewLayout = listLayout // Assign the list layout to the collection view layout.
 
-    let cellRegistration = UICollectionView.CellRegistration {
-      (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
-      let reminder = Reminder.sampleData[indexPath.item]
-      var contentConfiguration = cell.defaultContentConfiguration() // This func creates a content configuration with the predefined system style.
-      contentConfiguration.text = reminder.title
-      cell.contentConfiguration = contentConfiguration
-    }
+    let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
 
     dataSource = DataSource(collectionView: collectionView) {
       (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
