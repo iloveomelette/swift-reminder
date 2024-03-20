@@ -47,6 +47,12 @@ extension ReminderListViewController {
   
   func updateReminder(_ reminder: Reminder) {
     let index = reminders.indexOfReminder(withId: reminder.id)
-    reminder[index] = reminder
+    reminders[index] = reminder
+  }
+  
+  func completeReminder(withId id: Reminder.ID) {
+    var reminder = reminder(withId: id)
+    reminder.isComplete.toggle()
+    updateReminder(reminder)
   }
 }
