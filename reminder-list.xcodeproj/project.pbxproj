@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAA8485B2BAA64770008D417 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AAA848592BAA64770008D417 /* Base.lproj */; };
+		AAA8485C2BAA64770008D417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA8485A2BAA64770008D417 /* Assets.xcassets */; };
+		AAA8485E2BAA64910008D417 /* UIColor+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8485D2BAA64910008D417 /* UIColor+Today.swift */; };
+		AAA848602BAA64E30008D417 /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8485F2BAA64E30008D417 /* Date+Today.swift */; };
 		AAC8483B2BA4F5C5007E4686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8483A2BA4F5C5007E4686 /* AppDelegate.swift */; };
 		AAC8483D2BA4F5C5007E4686 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8483C2BA4F5C5007E4686 /* SceneDelegate.swift */; };
 		AAC8483F2BA4F5C5007E4686 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8483E2BA4F5C5007E4686 /* ReminderListViewController.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AAA848592BAA64770008D417 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = ../../../Downloads/DisplayingCellInfo/StartingProject/Today/Base.lproj; sourceTree = "<group>"; };
+		AAA8485A2BAA64770008D417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/DisplayingCellInfo/StartingProject/Today/Assets.xcassets; sourceTree = "<group>"; };
+		AAA8485D2BAA64910008D417 /* UIColor+Today.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Today.swift"; path = "../../../../Downloads/DisplayingCellInfo/StartingProject/Today/Models/UIColor+Today.swift"; sourceTree = "<group>"; };
+		AAA8485F2BAA64E30008D417 /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
 		AAC848372BA4F5C5007E4686 /* reminder-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reminder-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC8483A2BA4F5C5007E4686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC8483C2BA4F5C5007E4686 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +109,8 @@
 		AAC848392BA4F5C5007E4686 /* reminder-list */ = {
 			isa = PBXGroup;
 			children = (
+				AAA8485A2BAA64770008D417 /* Assets.xcassets */,
+				AAA848592BAA64770008D417 /* Base.lproj */,
 				AAC8486A2BA4FA4B007E4686 /* Models */,
 				AAC8483A2BA4F5C5007E4686 /* AppDelegate.swift */,
 				AAC8483C2BA4F5C5007E4686 /* SceneDelegate.swift */,
@@ -133,7 +143,9 @@
 		AAC8486A2BA4FA4B007E4686 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AAA8485D2BAA64910008D417 /* UIColor+Today.swift */,
 				AAC8486B2BA4FAA5007E4686 /* Reminder.swift */,
+				AAA8485F2BAA64E30008D417 /* Date+Today.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,7 +256,9 @@
 			files = (
 				AAC848472BA4F5C7007E4686 /* LaunchScreen.storyboard in Resources */,
 				AAC848442BA4F5C7007E4686 /* Assets.xcassets in Resources */,
+				AAA8485B2BAA64770008D417 /* Base.lproj in Resources */,
 				AAC848422BA4F5C5007E4686 /* Main.storyboard in Resources */,
+				AAA8485C2BAA64770008D417 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +285,8 @@
 			files = (
 				AAC8483F2BA4F5C5007E4686 /* ReminderListViewController.swift in Sources */,
 				AAC8483B2BA4F5C5007E4686 /* AppDelegate.swift in Sources */,
+				AAA8485E2BAA64910008D417 /* UIColor+Today.swift in Sources */,
+				AAA848602BAA64E30008D417 /* Date+Today.swift in Sources */,
 				AAC8483D2BA4F5C5007E4686 /* SceneDelegate.swift in Sources */,
 				AAC8486C2BA4FAA5007E4686 /* Reminder.swift in Sources */,
 			);
