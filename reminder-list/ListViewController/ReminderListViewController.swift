@@ -42,7 +42,7 @@ class ReminderListViewController: UICollectionViewController {
      *  }
      * Shorten the code you added above.
      */
-    snapshot.appendItems(reminders.map { $0.title })
+    snapshot.appendItems(reminders.map { $0.id })
     /*
      * Applying the snapshot reflects the changes in the user interface.
      */
