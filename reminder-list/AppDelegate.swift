@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  reminder-list
-//
-//  Created by BC-PC148 on 2024/03/16.
-//
-
 import UIKit
 
 @main
@@ -14,6 +7,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    UINavigationBar.appearance().tintColor = .todayPrimaryTint
+    UINavigationBar.appearance().backgroundColor = .todayNavigationBackground
+    let navBarAppearance = UINavigationBarAppearance()
+    navBarAppearance.configureWithOpaqueBackground()
+    UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     return true
   }
 
