@@ -43,7 +43,7 @@ class ReminderViewController: UICollectionViewController {
      */
     dataSource = DataSource(collectionView: collectionView) {
       (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Row) in
-      return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: <#T##IndexPath#>, item: itemIdentifier)
+      return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
     }
     
     updateSnapshot()

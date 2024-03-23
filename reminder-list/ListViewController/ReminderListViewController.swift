@@ -41,6 +41,32 @@ class ReminderListViewController: UICollectionViewController {
      */
     collectionView.dataSource = dataSource
   }
+  
+  /*
+   * You aren’t showing the item that the user tapped as selected, so return false.
+   * Instead, you’ll transition to the detail view for that list item.
+   */
+  override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    let id = reminders[indexPath.item].id
+    /*
+     * This method adds a detail view controller to the navigation stack,
+     * causing a detail view to push onto the screen.
+     * The detail view displays the reminder details for the provided identifier.
+     * And a Back button appears automatically as the leading item in the navigation bar.
+     */
+    pushDetailViewForReminder(withId: id)
+    return false
+  }
+  
+  func pushDetailViewForReminder(withId id: Reminder.ID) {
+    let reminder = reminder(withId: id)
+    let viewController = ReminderViewController(reminder: reminder)
+    /*
+     * If a view controller is currently embedded in a navigation controller,
+     * a reference to the navigation controller is stored in the optional navigationController property.
+     */
+    navigationController?.pushViewController(viewController, animated: true)
+  }
 
   /*
    * UICollectionViewCompositionalLayout:
