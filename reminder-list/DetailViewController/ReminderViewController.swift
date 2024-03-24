@@ -7,8 +7,8 @@ class ReminderViewController: UICollectionViewController {
    * you instruct the compiler that your data source uses instances of Int for the section numbers
    * and instances of Row—the custom enumeration that you defined in the previous section—for the list rows.
    */
-  private typealias DataSource = UICollectionViewDiffableDataSource<Int, Row>
-  private typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Row>
+  private typealias DataSource = UICollectionViewDiffableDataSource<Section, Row>
+  private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Row>
 
   var reminder: Reminder
   private var dataSource: DataSource!
@@ -76,11 +76,23 @@ class ReminderViewController: UICollectionViewController {
     /*
      * `[0]` represents an array of section identifiers, in this case only one section has been added.
      */
-    snapShot.appendSections([0])
-    snapShot.appendItems([Row.title, Row.date, Row.time, Row.notes], toSection: 0)
+    snapShot.appendSections([.view])
+    snapShot.appendItems([Row.title, Row.date, Row.time, Row.notes], toSection: .view)
     /*
      * This snapshot must be applied to the data source in order for the changes to be reflected in the view.
      */
     dataSource.apply(snapShot)
+  }
+
+  private func section(for indexPath: IndexPath) -> Section {
+    /*
+     * In view mode, all items are displayed in section 0.
+     * In editing mode, the title, date, and notes are separated into sections 1, 2, and 3, respectively.
+     */
+    let sectionNumber = isEditing ? indexPath.section + 1 : indexPath.section
+    guard let section = Section(rawValue: sectionNumber) else {
+      fatalError("Unable to find matching section")
+    }
+    return section
   }
 }
