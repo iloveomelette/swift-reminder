@@ -49,10 +49,20 @@ class ReminderViewController: UICollectionViewController {
       navigationItem.style = .navigator
     }
     navigationItem.title = NSLocalizedString("Reminder", comment: "Reminder view controller title")
-    
+    navigationItem.rightBarButtonItem = editButtonItem
+
     updateSnapshotForViewing()
   }
-  
+
+  override func setEditing(_ editing: Bool, animated: Bool) {
+    super.setEditing(editing, animated: animated)
+    if editing {
+      updateSnapshotForEditing()
+    } else {
+      updateSnapshotForViewing()
+    }
+  }
+
   func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
     let section = section(for: indexPath)
     switch (section, row) {
