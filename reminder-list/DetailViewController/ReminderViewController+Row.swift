@@ -2,6 +2,10 @@ import UIKit
 
 extension ReminderViewController {
   enum Row: Hashable {
+    /*
+     * You’ll display the associated value as the header title.
+     */
+    case header(String)
     case date
     case notes
     case time

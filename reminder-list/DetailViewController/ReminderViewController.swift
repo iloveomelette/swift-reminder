@@ -17,6 +17,7 @@ class ReminderViewController: UICollectionViewController {
     self.reminder = reminder
     var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
     listConfiguration.showsSeparators = false
+    listConfiguration.headerMode = .firstItemInSection
     let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
     super.init(collectionViewLayout: listLayout)
   }
@@ -66,9 +67,16 @@ class ReminderViewController: UICollectionViewController {
   func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
     let section = section(for: indexPath)
     switch (section, row) {
-      /*
-       * The underscore character (_) is a wildcard that matches any row value.
-       */
+    /*
+     * This case configures the title for every section.
+     */
+    case (_, .header(let title)):
+      var contentConfiguration = cell.defaultContentConfiguration()
+      contentConfiguration.text = title
+      cell.contentConfiguration = contentConfiguration
+    /*
+     * The underscore character (_) is a wildcard that matches any row value.
+     */
     case (.view, _):
       var contentConfiguration = cell.defaultContentConfiguration()
       contentConfiguration.text = text(for: row)
@@ -86,12 +94,16 @@ class ReminderViewController: UICollectionViewController {
     case .notes: return reminder.notes
     case .time: return reminder.dueDate.formatted(date: .omitted, time: .shortened)
     case .title: return reminder.title
+    default: return nil
     }
   }
 
   private func updateSnapshotForEditing() {
     var snapshot = Snapshot()
     snapshot.appendSections([.title, .date, .notes])
+    snapshot.appendItems([.header(Section.title.name)], toSection: .title)
+    snapshot.appendItems([.header(Section.date.name)], toSection: .date)
+    snapshot.appendItems([.header(Section.notes.name)], toSection: .notes)
     dataSource.apply(snapshot)
   }
 
@@ -101,7 +113,7 @@ class ReminderViewController: UICollectionViewController {
      * `[0]` represents an array of section identifiers, in this case only one section has been added.
      */
     snapShot.appendSections([.view])
-    snapShot.appendItems([Row.title, Row.date, Row.time, Row.notes], toSection: .view)
+    snapShot.appendItems([Row.header(""), Row.title, Row.date, Row.time, Row.notes], toSection: .view)
     /*
      * This snapshot must be applied to the data source in order for the changes to be reflected in the view.
      */
