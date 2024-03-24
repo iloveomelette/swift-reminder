@@ -50,18 +50,26 @@ class ReminderViewController: UICollectionViewController {
     }
     navigationItem.title = NSLocalizedString("Reminder", comment: "Reminder view controller title")
     
-    updateSnapshot()
+    updateSnapshotForViewing()
   }
   
   func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
-    var contentConfiguration = cell.defaultContentConfiguration()
-    contentConfiguration.text = text(for: row)
-    contentConfiguration.textProperties.font = UIFont.preferredFont(forTextStyle: row.textStyle)
-    contentConfiguration.image = row.image
-    cell.contentConfiguration = contentConfiguration
+    let section = section(for: indexPath)
+    switch (section, row) {
+      /*
+       * The underscore character (_) is a wildcard that matches any row value.
+       */
+    case (.view, _):
+      var contentConfiguration = cell.defaultContentConfiguration()
+      contentConfiguration.text = text(for: row)
+      contentConfiguration.textProperties.font = UIFont.preferredFont(forTextStyle: row.textStyle)
+      contentConfiguration.image = row.image
+      cell.contentConfiguration = contentConfiguration
+    default: fatalError("Unexpected combination of section and row.")
+    }
     cell.tintColor = .todayPrimaryTint
   }
-  
+
   func text(for row: Row) -> String? {
     switch row {
     case .date: return reminder.dueDate.dayText
@@ -70,8 +78,14 @@ class ReminderViewController: UICollectionViewController {
     case .title: return reminder.title
     }
   }
-  
-  private func updateSnapshot() {
+
+  private func updateSnapshotForEditing() {
+    var snapshot = Snapshot()
+    snapshot.appendSections([.title, .date, .notes])
+    dataSource.apply(snapshot)
+  }
+
+  private func updateSnapshotForViewing() {
     var snapShot = Snapshot()
     /*
      * `[0]` represents an array of section identifiers, in this case only one section has been added.
