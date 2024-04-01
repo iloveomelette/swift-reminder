@@ -2,15 +2,16 @@ import UIKit
 
 extension ReminderViewController {
   enum Row: Hashable {
-    /*
-     * You’ll display the associated value as the header title.
-     */
-    case header(String)
-    case date
-    case notes
-    case time
-    case title
-    
+     /*
+      * You’ll display the associated value as the header title.
+      */
+      case header(String)
+      case date
+      case notes
+      case time
+      case title
+      case editableText(String)
+
     var imageName: String? {
       switch self {
       case .date: return "calendar.circle"
