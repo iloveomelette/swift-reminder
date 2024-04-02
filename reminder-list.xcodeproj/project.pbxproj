@@ -17,6 +17,8 @@
 		AAB277232BB2473100AF0819 /* ReminderViewController+CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB277222BB2473100AF0819 /* ReminderViewController+CellConfiguration.swift */; };
 		AABCA3642BB7A01E00210027 /* TextFieldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCA3632BB7A01E00210027 /* TextFieldContentView.swift */; };
 		AABCA3662BB7A34A00210027 /* UIContentConfiguration+Stateless.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCA3652BB7A34A00210027 /* UIContentConfiguration+Stateless.swift */; };
+		AABCA3682BBB77BB00210027 /* TextViewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCA3672BBB77BB00210027 /* TextViewContentView.swift */; };
+		AABCA36A2BBB7B5200210027 /* DatePickerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCA3692BBB7B5200210027 /* DatePickerContentView.swift */; };
 		AAC8483B2BA4F5C5007E4686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8483A2BA4F5C5007E4686 /* AppDelegate.swift */; };
 		AAC8483D2BA4F5C5007E4686 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8483C2BA4F5C5007E4686 /* SceneDelegate.swift */; };
 		AAC8483F2BA4F5C5007E4686 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8483E2BA4F5C5007E4686 /* ReminderListViewController.swift */; };
@@ -61,6 +63,8 @@
 		AAB277222BB2473100AF0819 /* ReminderViewController+CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderViewController+CellConfiguration.swift"; sourceTree = "<group>"; };
 		AABCA3632BB7A01E00210027 /* TextFieldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContentView.swift; sourceTree = "<group>"; };
 		AABCA3652BB7A34A00210027 /* UIContentConfiguration+Stateless.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentConfiguration+Stateless.swift"; sourceTree = "<group>"; };
+		AABCA3672BBB77BB00210027 /* TextViewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContentView.swift; sourceTree = "<group>"; };
+		AABCA3692BBB7B5200210027 /* DatePickerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerContentView.swift; sourceTree = "<group>"; };
 		AAC848372BA4F5C5007E4686 /* reminder-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reminder-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC8483A2BA4F5C5007E4686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC8483C2BA4F5C5007E4686 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				AAEFF9BF2BB4F2CD0046BA24 /* UIView+PinnedSubview.swift */,
 				AABCA3632BB7A01E00210027 /* TextFieldContentView.swift */,
 				AABCA3652BB7A34A00210027 /* UIContentConfiguration+Stateless.swift */,
+				AABCA3672BBB77BB00210027 /* TextViewContentView.swift */,
+				AABCA3692BBB7B5200210027 /* DatePickerContentView.swift */,
 			);
 			path = ContentViews;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA848672BAAD4D20008D417 /* ReminderLIstViewController+Actions.swift in Sources */,
+				AABCA36A2BBB7B5200210027 /* DatePickerContentView.swift in Sources */,
 				AAC8483F2BA4F5C5007E4686 /* ReminderListViewController.swift in Sources */,
 				AAC8483B2BA4F5C5007E4686 /* AppDelegate.swift in Sources */,
 				AAA848602BAA64E30008D417 /* Date+Today.swift in Sources */,
@@ -348,6 +355,7 @@
 				AAA848632BAA6AAF0008D417 /* ReminderListViewController+DataSource.swift in Sources */,
 				AAA848692BABAC560008D417 /* ReminderViewController.swift in Sources */,
 				AAEFF9C02BB4F2CD0046BA24 /* UIView+PinnedSubview.swift in Sources */,
+				AABCA3682BBB77BB00210027 /* TextViewContentView.swift in Sources */,
 				AA0BB17E2BACFCED000E8F7D /* ReminderViewController+Row.swift in Sources */,
 				AAC8483D2BA4F5C5007E4686 /* SceneDelegate.swift in Sources */,
 				AAA848652BAAD3B50008D417 /* ReminderDoneButton.swift in Sources */,
