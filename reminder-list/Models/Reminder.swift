@@ -8,8 +8,10 @@ import Foundation
  *
  * `: Identifiable` declare conformance to the Identifiable protocol.
  * identifiable types must have an id property.
+ * Equatable: You can now compare reminders with the == and != operators.
+ * Swift’s default implementation for == checks that all property values are equal.
  */
-struct Reminder: Identifiable {
+struct Reminder: Equatable, Identifiable {
   /*
    * Stored Properties
    *
